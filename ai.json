@@ -74,14 +74,6 @@
       "moved": 0
     },
     {
-      "quadrant": 1,
-      "ring": 2,
-      "label": "Rovo AI Code Dev",
-      "link": "",
-      "active": true,
-      "moved": 0
-    },
-    {
       "quadrant": 2,
       "ring": 0,
       "label": "Anthropic ClaudeCode",
