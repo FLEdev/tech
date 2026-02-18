@@ -27,21 +27,20 @@ fetch(repoUrl + '/ai.json')
   return response.json();
 })
 .then(function (data) {
-		console.info(data);
   radar_visualization({
     repo_url: repoUrl,
     svg_id: "radar",
     radial_min: 49,
   	width: 1450,
     height: 1000,
-	scale: 0.7,
-	colors: {
+		scale: 0.7,
+		colors: {
     	background: "#99ccff",
     	grid: "#fff",
     	inactive: "#ccc"
     },
-    title: "FLE Tech Radar",
-    date: data.date,
+    title: "FLE AI Tech Radar",
+    date: date.data,
     quadrants: [
       { name: "Code/Generative" },
       { name: "Workflow" },
