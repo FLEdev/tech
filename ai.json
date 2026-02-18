@@ -216,6 +216,62 @@
       "link": "https://neuroflash.com/de/preisplaene/",
       "active": true,
       "moved": 0
+    },
+    {
+      "quadrant": 3,
+      "ring": 1,
+      "label": "Leaderboard",
+      "link": "https://artificialanalysis.ai/leaderboards/models",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 3,
+      "ring": 1,
+      "label": "Hugging Face Leaderboard",
+      "link": "https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard#/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 3,
+      "ring": 1,
+      "label": "LLM Stats Leaderboard",
+      "link": "https://llm-stats.com/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 3,
+      "ring": 1,
+      "label": "LLM Stats Leaderboard",
+      "link": "https://llm-stats.com/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 3,
+      "ring": 0,
+      "label": "LLM Studio",
+      "link": "https://llm-stats.com/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 3,
+      "ring": 2,
+      "label": "Ollama",
+      "link": "https://ollama.com/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 3,
+      "ring": 2,
+      "label": "Hugging Face LM",
+      "link": "https://huggingface.co/",
+      "active": true,
+      "moved": 0
     }
   ]
 }
