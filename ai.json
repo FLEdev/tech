@@ -84,8 +84,16 @@
     {
       "quadrant": 2,
       "ring": 3,
-      "label": "Open Router AI Gen",
+      "label": "Open Router - Code Agent",
       "link": "https://openrouter.ai/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 2,
+      "ring": 3,
+      "label": "Open Code - Code Agent",
+      "link": "https://opencode.ai/",
       "active": true,
       "moved": 0
     },
