@@ -320,6 +320,14 @@
       "link": "https://github.com/robconery/claude-code-hooks-mastery",
       "active": true,
       "moved": 0
+    },
+    {
+      "quadrant": 3,
+      "ring": 0,
+      "label": "Anthropic Certificate",
+      "link": "https://anthropic.skilljar.com/claude-code-in-action",
+      "active": true,
+      "moved": 0
     }
   ]
 }
