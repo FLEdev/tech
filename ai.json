@@ -106,14 +106,6 @@
       "moved": 0
     },
     {
-      "quadrant": 3,
-      "ring": 0,
-      "label": "Prompting Patterns",
-      "link": "https://github.com/danielmiessler/Fabric/",
-      "active": true,
-      "moved": 0
-    },
-    {
       "quadrant": 2,
       "ring": 0,
       "label": "OpenAI Code Agent",
