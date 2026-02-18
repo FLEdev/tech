@@ -83,15 +83,7 @@
     },
     {
       "quadrant": 2,
-      "ring": 0,
-      "label": "Open Router AI Gen",
-      "link": "https://openrouter.ai/",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 0,
+      "ring": 3,
       "label": "Open Router AI Gen",
       "link": "https://openrouter.ai/",
       "active": true,
@@ -275,7 +267,7 @@
     },
     {
       "quadrant": 2,
-      "ring": 0,
+      "ring": 3,
       "label": "LLM Visualizer",
       "link": "https://bbycroft.net/llm",
       "active": true,
