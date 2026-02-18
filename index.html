@@ -27,9 +27,8 @@ fetch(repoUrl + '/ai.json').then(function (response) {
   radar_visualization({
     repo_url: repoUrl,
     svg_id: "radar",
-    // 29 : 20
   	width: 1250,
-    height: 1200,
+    height: 1000,
 	scale: 1.0,
 	colors: {
     	background: "#ccc",
@@ -47,7 +46,7 @@ fetch(repoUrl + '/ai.json').then(function (response) {
     rings: [
       { name: "ADOPT", color: "#5ba300" },
       { name: "TRIAL", color: "#009eb0" },
-      { name: "HOLD", color: "#e09b96" },
+      { name: "d", color: "#e09b96" },
       { name: "HOLD", color: "#e09b96" }
     ],
     entries: data.entries
