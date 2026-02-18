@@ -100,14 +100,6 @@
     {
       "quadrant": 2,
       "ring": 0,
-      "label": "OpenAI Code Agent",
-      "link": "https://chatgpt.com/codex",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 2,
-      "ring": 0,
       "label": "OpenAI ChatGPT Code Agent",
       "link": "https://chatgpt.com/codex",
       "active": true,
