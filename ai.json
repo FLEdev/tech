@@ -32,8 +32,6 @@
       "active": true,
       "moved": 0
     },
-
-
     {
       "quadrant": 0,
       "ring": 0,
@@ -161,6 +159,6 @@
       "link": "",
       "active": true,
       "moved": 0
-    },
+    }
   ]
 }
