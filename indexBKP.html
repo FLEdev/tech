@@ -20,12 +20,12 @@
 		<svg id="radar"></svg>
 	</div>
 	<script>
-const repoUrl = 'https://fledev.github.io/tech';
-fetch(repoUrl + '/ai.json').then(function (response) {
+		
+fetch('https://opensource.zalando.com/tech-radar/config.json').then(function (response) {
   return response.json();
 }).then(function (data) {
   radar_visualization({
-    repo_url: repoUrl,
+    repo_url: "https://fledev.github.io/tech",
     svg_id: "radar",
     // 29 : 20
   	width: 1250,
@@ -34,20 +34,22 @@ fetch(repoUrl + '/ai.json').then(function (response) {
 	colors: {
     	background: "#ccc",
     	grid: "#fff",
-    	inactive: "#ccc"
+    	inactive: "#ccc",
+    	color: '#fff',
+    	text: '#fff'
     },
     title: "FLE Tech Radar",
     date: data.date,
     quadrants: [
-      { name: "Creative" },
-      { name: "Workflow" },
-      { name: "LLM" },
-      { name: "Knowledge" },
+      { name: "Languages" },
+      { name: "Infrastructure" },
+      { name: "Datastores" },
+      { name: "Data Management" },
     ],
     rings: [
       { name: "ADOPT", color: "#5ba300" },
       { name: "TRIAL", color: "#009eb0" },
-      { name: "HOLD", color: "#e09b96" },
+      { name: "ASSESS", color: "#c7ba00" },
       { name: "HOLD", color: "#e09b96" }
     ],
     entries: data.entries

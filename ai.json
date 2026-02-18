@@ -1,0 +1,50 @@
+
+/*
+    quadrants: [
+      { name: "Creative" },
+      { name: "Workflow" },
+      { name: "LLM" },
+      { name: "Knowledge" },
+    ],
+    rings: [
+      { name: "ADOPT", color: "#5ba300" },
+      { name: "TRIAL", color: "#009eb0" },
+      { name: "HOLD", color: "#e09b96" },
+      { name: "HOLD", color: "#e09b96" }
+    ],
+*/
+{
+  "date": "2025.05",
+  "entries": [
+    {
+      "quadrant": 3,
+      "ring": 1,
+      "label": "Dovo",
+      "link": "https://engineering.zalando.com/tags/apache-flink.html",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 4,
+      "ring": 1,
+      "label": "How LLMS Work",
+      "link": "https://www.youtube.com/watch?v=LPZh9BOjkQs",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 4,
+      "ring": 1,
+      "label": "Deep dive into LLM's",
+      "link": "https://www.youtube.com/watch?v=7xTGNNLPyMI&t=11715s",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 3,
+      "ring": 0,
+      "label": "AWS EMR",
+      "active": true,
+      "moved": 0
+    }
+]}
