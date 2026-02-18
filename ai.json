@@ -36,7 +36,7 @@
     {
       "quadrant": 3,
       "ring": 1,
-      "label": "Deep dive into LLM's",
+      "label": "Deep dive into LLM's - Andrej Karpathy",
       "link": "https://www.youtube.com/watch?v=7xTGNNLPyMI&t=11715s",
       "active": true,
       "moved": 0
@@ -260,8 +260,32 @@
     {
       "quadrant": 3,
       "ring": 2,
-      "label": "Hugging Face LM",
-      "link": "https://huggingface.co/",
+      "label": "Hugging Face LLM Playground",
+      "link": "https://huggingface.co/spaces/huggingface/inference-playground",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 3,
+      "ring": 1,
+      "label": "Text Tokenizer",
+      "link": "https://tiktokenizer.vercel.app/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 2,
+      "ring": 0,
+      "label": "LLM Visualizer",
+      "link": "https://bbycroft.net/llm",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 3,
+      "ring": 2,
+      "label": "LM Graphic Representation by AK",
+      "link": "https://fledev.github.io/tech/data/LLMIntro-2024-07-22-1743.excalidraw",
       "active": true,
       "moved": 0
     }
