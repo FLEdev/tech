@@ -296,6 +296,30 @@
       "link": "https://www.promptfoo.dev/",
       "active": true,
       "moved": 0
+    },
+    {
+      "quadrant": 1,
+      "ring": 1,
+      "label": "Acoustic Generator - Suno",
+      "link": "https://suno.com/home",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 0,
+      "ring": 3,
+      "label": "Voice AI for devs",
+      "link": "https://vapi.ai/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 0,
+      "ring": 3,
+      "label": "quick Container Hosting",
+      "link": "https://render.com/",
+      "active": true,
+      "moved": 0
     }
   ]
 }
