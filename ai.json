@@ -67,7 +67,7 @@
     },
     {
       "quadrant": 1,
-      "ring": 2,
+      "ring": 1,
       "label": "Rovo AI Code Dev",
       "link": "https://www.atlassian.com/software/rovo-dev/",
       "active": true,
@@ -114,7 +114,7 @@
       "moved": 0
     },
     {
-      "quadrant": 3,
+      "quadrant": 2,
       "ring": 0,
       "label": "Google Gemini",
       "link": "https://aistudio.google.com/api-keys",
@@ -155,7 +155,7 @@
     },
     {
       "quadrant": 0,
-      "ring": 0,
+      "ring": 2,
       "label": "NanoBanana Img Generation",
       "link": "https://gemini.google/overview/image-generation/",
       "active": true,
@@ -163,7 +163,7 @@
     },
     {
       "quadrant": 0,
-      "ring": 0,
+      "ring": 1,
       "label": "Ace Music Generation",
       "link": "https://github.com/ace-step/ACE-Step-1.5",
       "active": true,
@@ -242,7 +242,7 @@
       "moved": 0
     },
     {
-      "quadrant": 3,
+      "quadrant": 2,
       "ring": 2,
       "label": "Ollama",
       "link": "https://ollama.com/",
@@ -278,6 +278,22 @@
       "ring": 2,
       "label": "LM Graphic Representation by AK",
       "link": "https://fledev.github.io/tech/data/LLMIntro-2024-07-22-1743.excalidraw",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 2,
+      "ring": 0,
+      "label": "LLM Features",
+      "link": "https://context7.com/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 1,
+      "ring": 1,
+      "label": "Prompt Testing",
+      "link": "https://www.promptfoo.dev/",
       "active": true,
       "moved": 0
     }
