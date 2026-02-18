@@ -227,14 +227,6 @@
     },
     {
       "quadrant": 3,
-      "ring": 1,
-      "label": "LLM Stats Leaderboard",
-      "link": "https://llm-stats.com/",
-      "active": true,
-      "moved": 0
-    },
-    {
-      "quadrant": 3,
       "ring": 0,
       "label": "LLM Studio",
       "link": "https://llm-stats.com/",
