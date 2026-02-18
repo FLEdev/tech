@@ -192,6 +192,30 @@
       "link": "https://github.com/ace-step/ACE-Step-1.5",
       "active": true,
       "moved": 0
+    },
+    {
+      "quadrant": 1,
+      "ring": 0,
+      "label": "n8n Workflow",
+      "link": "https://n8n.io/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 1,
+      "ring": 0,
+      "label": "PydanticAI",
+      "link": "https://ai.pydantic.dev/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 1,
+      "ring": 0,
+      "label": "Tanstack AI",
+      "link": "https://tanstack.com/ai/latest/",
+      "active": true,
+      "moved": 0
     }
   ]
 }
