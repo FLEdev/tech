@@ -21,12 +21,17 @@
 	</div>
 	<script>
 const repoUrl = 'https://fledev.github.io/tech';
-fetch(repoUrl + '/ai.json').then(function (response) {
+fetch(repoUrl + '/ai.json')
+.then(function (response) {
+
   return response.json();
-}).then(function (data) {
+})
+.then(function (data) {
+		console.info(data);
   radar_visualization({
     repo_url: repoUrl,
     svg_id: "radar",
+    radial_min: 49,
   	width: 1250,
     height: 1200,
 	scale: 1.0,
