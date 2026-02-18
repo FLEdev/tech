@@ -2,16 +2,24 @@
   "date": "2025.05",
   "entries": [
     {
-      "quadrant": 3,
-      "ring": 1,
-      "label": "Dovo",
-      "link": "https://engineering.zalando.com/tags/apache-flink.html",
+      "quadrant": 1,
+      "ring": 2,
+      "label": "Python FastAPI",
+      "link": "https://fastapi.tiangolo.com/tutorial/first-steps/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 1,
+      "ring": 2,
+      "label": "Mastra JS Workflow",
+      "link": "https://github.com/mastra-ai/mastra",
       "active": true,
       "moved": 0
     },
     {
       "quadrant": 3,
-      "ring": 0,
+      "ring": 1,
       "label": "How LLMS Work",
       "link": "https://www.youtube.com/watch?v=LPZh9BOjkQs",
       "active": true,
@@ -20,10 +28,170 @@
     {
       "quadrant": 3,
       "ring": 0,
+      "label": "Mastering ClaudeCode",
+      "link": "https://www.youtube.com/watch?v=6eBSHbLKuN0",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 3,
+      "ring": 1,
       "label": "Deep dive into LLM's",
       "link": "https://www.youtube.com/watch?v=7xTGNNLPyMI&t=11715s",
       "active": true,
       "moved": 0
-    }
+    },    
+    {
+      "quadrant": 3,
+      "ring": 0,
+      "label": "Prompting Video",
+      "link": "https://www.youtube.com/watch?v=pwWBcsxEoLk",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 3,
+      "ring": 2,
+      "label": "Claude Code - Local LLM",
+      "link": "https://www.youtube.com/watch?v=3x2q6-5XbQ8",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 1,
+      "ring": 2,
+      "label": "Open Code Agent",
+      "link": "https://opencode.ai/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 1,
+      "ring": 2,
+      "label": "Rovo AI Code Dev",
+      "link": "https://www.atlassian.com/software/rovo-dev/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 1,
+      "ring": 2,
+      "label": "Rovo AI Code Dev",
+      "link": "",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 2,
+      "ring": 0,
+      "label": "Anthropic ClaudeCode",
+      "link": "https://claude.ai/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 2,
+      "ring": 0,
+      "label": "Open Router AI Gen",
+      "link": "https://openrouter.ai/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 2,
+      "ring": 0,
+      "label": "Open Router AI Gen",
+      "link": "https://openrouter.ai/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 3,
+      "ring": 0,
+      "label": "Prompting Patterns",
+      "link": "https://github.com/danielmiessler/Fabric",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 3,
+      "ring": 0,
+      "label": "Prompting Patterns",
+      "link": "https://github.com/danielmiessler/Fabric/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 2,
+      "ring": 0,
+      "label": "OpenAI Code Agent",
+      "link": "https://chatgpt.com/codex",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 2,
+      "ring": 0,
+      "label": "OpenAI ChatGPT Code Agent",
+      "link": "https://chatgpt.com/codex",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 3,
+      "ring": 0,
+      "label": "Google Gemini",
+      "link": "https://aistudio.google.com/api-keys",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 2,
+      "ring": 2,
+      "label": "Qwen Alibaba",
+      "link": "https://qwen.ai/home",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 2,
+      "ring": 2,
+      "label": "GLM - Agentic Coding",
+      "link": "https://github.com/zai-org/GLM-4.5",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 2,
+      "ring": 2,
+      "label": "Groq xAi - Musk",
+      "link": "https://grok.com/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 2,
+      "ring": 0,
+      "label": "Perplexity Chat",
+      "link": "https://www.perplexity.ai/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 0,
+      "ring": 0,
+      "label": "NanoBanana Img Generation",
+      "link": "https://gemini.google/overview/image-generation/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 0,
+      "ring": 0,
+      "label": "Ace Music Generation",
+      "link": "https://github.com/ace-step/ACE-Step-1.5",
+      "active": true,
+      "moved": 0
+    },
   ]
 }
