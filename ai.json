@@ -312,6 +312,14 @@
       "link": "https://render.com/",
       "active": true,
       "moved": 0
+    },
+    {
+      "quadrant": 0,
+      "ring": 3,
+      "label": "ClaudeCode Hooks",
+      "link": "https://github.com/robconery/claude-code-hooks-mastery",
+      "active": true,
+      "moved": 0
     }
   ]
 }
