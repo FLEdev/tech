@@ -328,6 +328,14 @@
       "link": "https://anthropic.skilljar.com/claude-code-in-action",
       "active": true,
       "moved": 0
+    },
+    {
+      "quadrant": 1,
+      "ring": 2,
+      "label": "Browser Extension for n8n",
+      "link": "https://www.airtop.ai",
+      "active": true,
+      "moved": 0
     }
   ]
 }
