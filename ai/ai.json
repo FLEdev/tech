@@ -376,6 +376,14 @@
       "link": "https://github.com/cheahjs/free-llm-api-resources",
       "active": true,
       "moved": 0
+    },
+    {
+      "quadrant": 0,
+      "ring": 0,
+      "label": "Compfy UI",
+      "link": "https://www.comfy.org",
+      "active": true,
+      "moved": 0
     }
   ]
 }
