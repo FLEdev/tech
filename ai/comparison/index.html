@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workflow Tools Comparison</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --tw-color-blue: rgb(59 130 246 / 1);
+        }
+
+        table thead tr th {
+            padding: 0 60px;
+        }
+
+        table tbody tr:nth-child(even) {
+            background: #F0F0F0;
+        }
+
+        table tbody tr {
+            border-bottom: 1px solid var(--tw-color-blue);
+            text-align: center;
+        }
+        table tbody tr td {
+            padding: 10px;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            font-size: 12px;
+        }
+
+        table tbody tr td:first-child {
+            font-size: 14px;
+            font-weight: bold;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        table tbody tr:nth-child(even) td:first-child {
+            background: #F0F0F0;
+        }
+    </style>
+</head>
+<body>
+
+<main class="bg-gray-50 h-screen flex justify-center items-center">
+    <div class="min-h-screen p-8 pt-12">
+        <h1 class="text-3xl font-bold">n8n vs. Make vs. Zapier</h1>
+        <h4 class="">&copy; Frantisek Leginsky</h4>
+
+        <table class="w-full border-collapse border border-blue-500 max-w-xl mt-16 mx-auto outline outline-1 outline-gray-400 overflow-hidden rounded-lg">
+            <thead class="text-center">
+            <tr class="bg-blue-500 text-white">
+                <th class="py-3 ps-2 pe-20 text-left text-xs bg-blue-400">Discipline:</th>
+                <th class="">n8n</th>
+                <th class="">Make</th>
+                <th class="">Zapier</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="">
+                <td class="">1. Similarity</td>
+                <td class=""><img src="assets/chef1.png"></td>
+                <td class=""><img src="assets/hf.jpg"></td>
+                <td class=""><img src="assets/pizza_microwave.png"></td>
+            </tr>
+            <tr class="">
+                <td class="">2. Philosophy</td>
+                <td class="">complete Freedom – Full Technical Flexibility</td>
+                <td class="">Visual control to avoid writing Code (Digital Playground)</td>
+                <td class="">build for Simplicity, "Anyone can do it – FAST!"</td>
+            </tr>
+            <tr class="">
+                <td class="">3. Billing</td>
+                <td class="">per Workflow</td>
+                <td class="">per Operation</td>
+                <td class="">per Actions <br /><span class="text-xs">* Addons like Chatbots, Tables, Forms are +</span></td>
+            </tr>
+            <tr class="">
+                <td class="">4. Costs</td>
+                <td class="">low</td>
+                <td class="">mid/high</td>
+                <td class="">high</td>
+            </tr>
+            <tr class="">
+                <td class="">5. Flow</td>
+                <td class="">Split & Interconnected</td>
+                <td class="">Interconnected</td>
+                <td class="">Linear</td>
+            </tr>
+            <tr class="">
+                <td class="">6. Hosting</td>
+                <td class="">Cloud & Self-Hosted - CE</td>
+                <td class="">Cloud only</td>
+                <td class="">Cloud only</td>
+            </tr>
+            <tr class="">
+                <td class="">7. Learning Curve</td>
+                <td class="">steep</td>
+                <td class="">low</td>
+                <td class="">even</td>
+            </tr>
+            <tr class="">
+                <td class="">8. Preview</td>
+                <td class=""></td>
+                <td class=""></td>
+                <td class=""></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+</body>
+</html>
+
+
+
+
+<role>
+    You are a helpful system agent that has to create a table
+</role>
+
+<task>
+    Create a table with Tool: {{ Object.keys($('Start').item.json.table_structure).length }}cTable coresponding Structure:
+
+    Name: {{ $('Start').item.json.table_name }}
+    Columns: {{ JSON.stringify($('Start').item.json.table_structure) }}
+</task>
+
+<important>
+
+</important>
+
+<condition>
+    - The Tool might require more Columns as required. If so, add only the available Columns.
+    - Each Task Points has to be fulfilled.
+    - At any impediment, ask human for instructions.
+</condition>
+
+
+
+# Introduction
+You are a helpful system agent that has to create a n8n table.
+
+# Task
+- Create a table with  Structure:
+- Name: {{ $('Start').item.json.table_name }}
+- Columns: {{ JSON.stringify($('Start').item.json.table_structure) }}
+
+# Conditions
+- The Tool might require more Columns as required. If so, add only the available Columns.
+- Each Task Points has to be fulfilled.
+- At any impediment, ask human for instructions.

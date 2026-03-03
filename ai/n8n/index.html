@@ -3,10 +3,33 @@
     <script src="https://n8n-io.github.io/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
     <script src="https://n8n-io.github.io/node_modules/lit/polyfill-support.js"></script>
     <script type="module" src="https://n8n-io.github.io/n8n-demo-webcomponent/n8n-demo.bundled.js"></script>
+
+    <style>
+        n8n-demo {
+            --n8n-frame-background-color: black;
+            --n8n-json-background-color: lightgray;
+            --n8n-copy-button-background-color: gray;
+            --n8n-workflow-min-height: 500px;
+            --n8n-iframe-border-radius: 30px;
+            padding-bottom: 40px;
+        }
+    </style>
 </head>
 <body>
 
-<n8n-demo src="https://fledev.github.io/tech/ai/n8n_templates/Archive_HR_legal_documents.json" frame=true></n8n-demo>
+<n8n-demo class="n8n-ensure_table_sub" workflow="" frame="true" tidyup="true"></n8n-demo>
+<n8n-demo class="n8n-email_dispatcher" workflow="" frame="true" tidyup="true"></n8n-demo>
+
+<script>
+    const ensureTable = fetch('https://fledev.github.io/tech/ai/n8n_templates/Ensure_Table_sub.json').then(response => response.json()).then(data => {
+        document.querySelector('.n8n-ensure_table_sub').workflow = JSON.stringify(data);
+    });
+
+    const emailDispatcher = fetch('https://fledev.github.io/tech/ai/n8n_templates/Email_Dispatcher.json').then(response => response.json()).then(data => {
+        document.querySelector('.n8n-email_dispatcher').workflow = JSON.stringify(data);
+    });
+
+</script>
 </body>
 </html>
 

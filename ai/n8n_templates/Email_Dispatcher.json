@@ -1,0 +1,553 @@
+{
+  "name": "Email Dispatcher",
+  "nodes": [
+    {
+      "parameters": {
+        "inputText": "={{ $('Email Mockup').item.json.subject }}\n{{ $('Email Mockup').item.json.body }}",
+        "categories": {
+          "categories": [
+            {
+              "category": "hr",
+              "description": "hr"
+            },
+            {
+              "category": "product",
+              "description": "product"
+            },
+            {
+              "category": "legal",
+              "description": "legal"
+            },
+            {
+              "category": "default",
+              "description": "default"
+            }
+          ]
+        },
+        "options": {
+          "systemPromptTemplate": "Please classify the text provided by the user into one of the following categories: {categories}, and use the provided formatting instructions below. Use Default only as last resort. Don't explain, and only output the json."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.textClassifier",
+      "typeVersion": 1.1,
+      "position": [
+        -80,
+        48
+      ],
+      "id": "e0431dec-80c8-4f06-aaa0-0655b59c0b2e",
+      "name": "Text Classifier",
+      "alwaysOutputData": true,
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "value": "google/gemma-3-4b",
+          "mode": "list",
+          "cachedResultName": "google/gemma-3-4b"
+        },
+        "responsesApiEnabled": false,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.3,
+      "position": [
+        -80,
+        304
+      ],
+      "id": "de576818-ee90-4cb8-a929-5e9342d536f8",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "RFEYUP82Tijepkks",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "Input\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nform_test_user\nform_test_user777",
+        "height": 304,
+        "width": 256
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1216,
+        0
+      ],
+      "typeVersion": 1,
+      "id": "73a24385-ce7c-424b-992c-a94c7177c39e",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        480,
+        -80
+      ],
+      "id": "04df565c-e394-486f-85ee-880970275b18",
+      "name": "Forward to HR",
+      "webhookId": "b8c40c2d-2cb0-4a53-91b6-de578233f3a3",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        480,
+        192
+      ],
+      "id": "6ee7808c-bc14-4c93-949f-788e2bda8e98",
+      "name": "Forward to Legal",
+      "webhookId": "b8c40c2d-2cb0-4a53-91b6-de578233f3a3"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        480,
+        48
+      ],
+      "id": "ad712790-2d23-448c-8685-afd42c6caa9b",
+      "name": "Forward to Tech Supoort",
+      "webhookId": "b8c40c2d-2cb0-4a53-91b6-de578233f3a3"
+    },
+    {
+      "parameters": {
+        "authentication": "basicAuth",
+        "formTitle": "Email Mocker",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "sender",
+              "defaultValue": "some@company.com"
+            },
+            {
+              "fieldLabel": "subject",
+              "defaultValue": "Inquiry about Product"
+            },
+            {
+              "fieldLabel": "body",
+              "fieldType": "textarea",
+              "defaultValue": "invoice"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.5,
+      "position": [
+        -1152,
+        80
+      ],
+      "id": "1218b5b7-f4e3-45b9-b650-f45343c3f78b",
+      "name": "Email Mockup",
+      "webhookId": "4915fa50-f288-409f-b52c-8f7e3f5ae1bd",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "L8wITEs74d2bhm3t",
+          "name": "Unnamed credential"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "d1KMKn8VgGjlSkDA",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/d1KMKn8VgGjlSkDA",
+          "cachedResultName": "Ensure Table"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.2,
+      "position": [
+        -432,
+        80
+      ],
+      "name": "Call Ensure Table",
+      "id": "8e43dc2d-8da7-4eca-b484-a603b3e54d9a",
+      "executeOnce": true,
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b21072c8-a047-434e-8d94-53478319d6e6",
+              "name": "table_name",
+              "value": "info_at_emails_input",
+              "type": "string"
+            },
+            {
+              "id": "735738a4-e26c-40e7-93d7-38847fa32b51",
+              "name": "table_structure",
+              "value": "={  \n\"department\":\"string\",\n\"email\":\"string\",\n\"status\":\"string\"\n}",
+              "type": "object"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -784,
+        80
+      ],
+      "id": "12b26eb6-4bca-4a52-a6ab-291e19e39a0d",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "dataTableId": {
+          "__rl": true,
+          "value": "TA65gzEPkL3iJLU3",
+          "mode": "list",
+          "cachedResultName": "info_at_emails_input",
+          "cachedResultUrl": "/projects/HXXy7VE8D3eEKGt4/datatables/TA65gzEPkL3iJLU3"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "email": "={{ $('Email Mockup').item.json.sender }}",
+            "status": "forwarded",
+            "department": "={{ $json.department[0] }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "department",
+              "displayName": "department",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "status",
+              "displayName": "status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        1488,
+        112
+      ],
+      "id": "88c9af1c-88fe-4941-94ed-7fae8a020d45",
+      "name": "Insert row"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b21072c8-a047-434e-8d94-53478319d6e6",
+              "name": "department",
+              "value": "hr",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        784,
+        -128
+      ],
+      "id": "801a6e21-b969-4cd5-8b96-84e6401e5e05",
+      "name": "setDepartmentHR"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b21072c8-a047-434e-8d94-53478319d6e6",
+              "name": "department",
+              "value": "product",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        784,
+        48
+      ],
+      "id": "20761879-e33f-4e10-bbb2-1970c2b6749a",
+      "name": "setDepartmentProduct"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b21072c8-a047-434e-8d94-53478319d6e6",
+              "name": "department",
+              "value": "legal",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        784,
+        256
+      ],
+      "id": "ae7637c1-210e-4892-b59e-757653fce695",
+      "name": "setDepartmentLegal"
+    },
+    {
+      "parameters": {
+        "fieldsToAggregate": {
+          "fieldToAggregate": [
+            {
+              "fieldToAggregate": "department"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.aggregate",
+      "typeVersion": 1,
+      "position": [
+        1248,
+        128
+      ],
+      "id": "787fb5c8-6312-4618-9b98-2c21962533e0",
+      "name": "Aggregate"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b21072c8-a047-434e-8d94-53478319d6e6",
+              "name": "department",
+              "value": "unknown",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        768,
+        464
+      ],
+      "id": "2b4e2492-31ee-4811-9106-6d5e166a8ceb",
+      "name": "setDepartmentUnknown"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Text Classifier": {
+      "main": [
+        [
+          {
+            "node": "setDepartmentHR",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "setDepartmentProduct",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "setDepartmentLegal",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "setDepartmentUnknown",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Email Mockup": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Call Ensure Table",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call Ensure Table": {
+      "main": [
+        [
+          {
+            "node": "Text Classifier",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "setDepartmentHR": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "setDepartmentProduct": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "setDepartmentLegal": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert row": {
+      "main": [
+        []
+      ]
+    },
+    "Aggregate": {
+      "main": [
+        [
+          {
+            "node": "Insert row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "setDepartmentUnknown": {
+      "main": [
+        [
+          {
+            "node": "Aggregate",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "0d91759d-ae5d-4c20-80e6-606e452752ae",
+  "meta": {
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  },
+  "id": "pEzHQGFvsiOqN0Eo",
+  "tags": []
+}
