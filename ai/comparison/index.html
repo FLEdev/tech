@@ -45,8 +45,8 @@
 </head>
 <body>
 
-<main class="bg-gray-50 h-screen flex justify-center items-center">
-    <div class="min-h-screen p-8 pt-12">
+<main class="bg-gray-50 flex justify-center items-center">
+    <div class=" p-8 pt-12">
         <h1 class="text-3xl font-bold">n8n vs. Make vs. Zapier</h1>
         <h4 class="">&copy; Frantisek Leginsky</h4>
 
@@ -62,9 +62,9 @@
             <tbody>
             <tr class="">
                 <td class="">1. Similarity</td>
-                <td class=""><img src="assets/chef1.png"></td>
-                <td class=""><img src="assets/hf.jpg"></td>
-                <td class=""><img src="assets/pizza_microwave.png"></td>
+                <td class=""><img title="Chef like" src="assets/chef1.png"></td>
+                <td class=""><img title="cooking by receipt" src="assets/hf.jpg"></td>
+                <td class=""><img title="using ready made" src="assets/pizza_microwave.png"></td>
             </tr>
             <tr class="">
                 <td class="">2. Philosophy</td>
@@ -76,7 +76,7 @@
                 <td class="">3. Billing</td>
                 <td class="">per Workflow</td>
                 <td class="">per Operation</td>
-                <td class="">per Actions <br /><span class="text-xs">* Addons like Chatbots, Tables, Forms are +</span></td>
+                <td class="">per Actions <br /><span class="text-xs">* Addons like Chatbots, Tables, Forms are extra</span></td>
             </tr>
             <tr class="">
                 <td class="">4. Costs</td>
@@ -103,53 +103,46 @@
                 <td class="">even</td>
             </tr>
             <tr class="">
-                <td class="">8. Preview</td>
-                <td class=""></td>
-                <td class=""></td>
-                <td class=""></td>
+                <td class="">8. Scalability</td>
+                <td class="">high</td>
+                <td class="">TM</td>
+                <td class="">low</td>
+            </tr>
+            <tr class="">
+                <td class="">9. Data Security</td>
+                <td class="">Total Control</td>
+                <td class="">GDPR + encrypt</td>
+                <td class="">GDPR + encrypt</td>
+            </tr>
+            <tr class="">
+                <td class="">10. Paywall Integration</td>
+                <td class="">Self Integrated - Webhook</td>
+                <td class="">❌</td>
+                <td class="">✅</td>
+            </tr>
+            <tr class="">
+                <td class="">Preview</td>
+                <td class=""><a href="assets/preview/n8n.png" target="_blank"><img class="border" src="assets/preview/n8n.png"></a></td>
+                <td class=""><a href="assets/preview/make.png" target="_blank"><img class="border" src="assets/preview/make.png"></a></td>
+                <td class=""><a href="assets/preview/zapier.png" target="_blank"><img class="border" src="assets/preview/zapier.png"></a></td>
             </tr>
             </tbody>
         </table>
+
+        <div class="mt-40">
+            <h1>Tangent Platforms:</h1>
+            <ul class="ms-2">
+                <li>- Power Automate (MS)</li>
+                <li>- AirTable (Dataflow Automation)</li>
+            </ul>
+            <hr class="my-4"/>
+            <h3>Dashboards:</h3>
+            <ul class="ms-2">
+                <li>- Power BI</li>
+                <li>- Tableau</li>
+            </ul>
+        </div>
     </div>
 </main>
 </body>
 </html>
-
-
-
-
-<role>
-    You are a helpful system agent that has to create a table
-</role>
-
-<task>
-    Create a table with Tool: {{ Object.keys($('Start').item.json.table_structure).length }}cTable coresponding Structure:
-
-    Name: {{ $('Start').item.json.table_name }}
-    Columns: {{ JSON.stringify($('Start').item.json.table_structure) }}
-</task>
-
-<important>
-
-</important>
-
-<condition>
-    - The Tool might require more Columns as required. If so, add only the available Columns.
-    - Each Task Points has to be fulfilled.
-    - At any impediment, ask human for instructions.
-</condition>
-
-
-
-# Introduction
-You are a helpful system agent that has to create a n8n table.
-
-# Task
-- Create a table with  Structure:
-- Name: {{ $('Start').item.json.table_name }}
-- Columns: {{ JSON.stringify($('Start').item.json.table_structure) }}
-
-# Conditions
-- The Tool might require more Columns as required. If so, add only the available Columns.
-- Each Task Points has to be fulfilled.
-- At any impediment, ask human for instructions.
