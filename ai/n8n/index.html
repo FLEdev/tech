@@ -33,17 +33,21 @@
 
         <div class="n8n-demo-container">
             <h2>RAG to Vector DB</h2>
-            <n8n-demo class="n8n-rag_vector_db" workflow="" frame="true" tidyup="true"></n8n-demo>
+            <n8n-demo class="n8n-rag_basic" workflow="" frame="true" tidyup="true"></n8n-demo>
         </div>
     </div>
 
     <script>
-        const ensureTable = fetch('https://fledev.github.io/tech/ai/n8n_templates/Ensure_Table_sub.json').then(response => response.json()).then(data => {
+        const ensureTable = fetch('https://fledev.github.io/tech/ai/n8n/templates/Ensure_Table_sub.json').then(response => response.json()).then(data => {
             document.querySelector('.n8n-ensure_table_sub').workflow = JSON.stringify(data);
         });
 
-        const emailDispatcher = fetch('https://fledev.github.io/tech/ai/n8n_templates/Email_Dispatcher.json').then(response => response.json()).then(data => {
+        const emailDispatcher = fetch('https://fledev.github.io/tech/ai/n8n/templates/Email_Dispatcher.json').then(response => response.json()).then(data => {
             document.querySelector('.n8n-email_dispatcher').workflow = JSON.stringify(data);
+        });
+
+        const ragBasic = fetch('https://fledev.github.io/tech/ai/n8n/templates/RagBasic.json').then(response => response.json()).then(data => {
+            document.querySelector('.n8n-rag_basic').workflow = JSON.stringify(data);
         });
     </script>
 </body>
