@@ -384,6 +384,70 @@
       "link": "https://www.comfy.org",
       "active": true,
       "moved": 0
+    },
+    {
+      "quadrant": 1,
+      "ring": 0,
+      "label": "Meteo API",
+      "link": "https://api.open-meteo.com/v1/forecast",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 1,
+      "ring": 0,
+      "label": "Meteo API",
+      "link": "https://api.open-meteo.com/v1/forecast",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 1,
+      "ring": 0,
+      "label": "Tech News",
+      "link": "https://www.theverge.com/rss/index.xml",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 1,
+      "ring": 0,
+      "label": "World News",
+      "link": "https://feeds.bbci.co.uk/news/world/rss.xml",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 2,
+      "ring": 2,
+      "label": "Build your own LLM - Karpathy",
+      "link": "https://github.com/karpathy/nanochat",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 0,
+      "ring": 1,
+      "label": "Claude Receipts",
+      "link": "https://github.com/pbakaus/impeccable",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 0,
+      "ring": 2,
+      "label": "Miro Fish AI predictive Agent",
+      "link": "https://github.com/666ghj/MiroFish?tab=readme-ov-file",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 1,
+      "ring": 0,
+      "label": "Prompt Testing",
+      "link": "https://www.promptfoo.dev",
+      "active": true,
+      "moved": 0
     }
   ]
 }
