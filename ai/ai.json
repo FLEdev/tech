@@ -456,6 +456,14 @@
       "link": "https://github.com/msitarzewski/agency-agents/tree/main",
       "active": true,
       "moved": 0
+    },
+    {
+      "quadrant": 0,
+      "ring": 2,
+      "label": "Agency Agents #2",
+      "link": "https://github.com/Amitkumersarkar/The-Agency.Ai",
+      "active": true,
+      "moved": 0
     }
   ]
 }

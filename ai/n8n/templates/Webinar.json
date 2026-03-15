@@ -1,0 +1,1129 @@
+{
+  "name": "Webinar",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Webinar",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Name"
+            },
+            {
+              "fieldLabel": "E-Mail-Adresse",
+              "fieldType": "email"
+            },
+            {
+              "fieldLabel": "Telefonnummer"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.5,
+      "position": [
+        -432,
+        -16
+      ],
+      "id": "e64ba333-15d0-4351-9fdd-986eed05d5ce",
+      "name": "On form submission",
+      "webhookId": "c9340aea-da22-46e9-b85b-6fc936f8844b"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=<role>\nYou are a helpful AI assistant processing the webinar Input\n</role>\n\n<action>\n- Provide an Message while Capitalise Name from: \"{{ $json.Name }}\" and use following Template:\n\n\n```\nHallo {Capitalised Name},\nvielen Dank für das Anmelden an unseren Webinar.\n\nFür weitere Infos clicke bitte auf: https://webinar-link.com\n\nMit freundlichen Grüßen,\nDein Webinar Team\n```\n\n- Execute Mixpanel Request and set results to \"Webinar_Status\" Table\n</action> ",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        688,
+        -16
+      ],
+      "id": "19d774d5-47e8-439e-bb8e-01b527147014",
+      "name": "AI Agent",
+      "alwaysOutputData": true,
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        688,
+        240
+      ],
+      "id": "ef957c54-2135-4c60-a16f-7b7cf21943c4",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "mDxu0f5C88zMh7KO",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "fromEmail": "webinnar@company.de",
+        "toEmail": "={{ $json['E-Mail-Adresse'] }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSendHitlTool",
+      "typeVersion": 2.1,
+      "position": [
+        864,
+        240
+      ],
+      "id": "487f81b3-d56e-44df-9a00-e5ebcbc8313a",
+      "name": "Send Email",
+      "webhookId": "d0627cca-9fdd-46fe-ad9a-52bc7355b93c"
+    },
+    {
+      "parameters": {
+        "resume": "specificTime",
+        "dateTime": "2026-03-18T00:00:00"
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -352,
+        1072
+      ],
+      "id": "f789bc09-db3a-4b44-ba00-6f3ced7a5402",
+      "name": "Before Webinar",
+      "webhookId": "c1eaa733-baa7-482d-a894-c8822552803f"
+    },
+    {
+      "parameters": {
+        "content": "Webinar Input",
+        "height": 704,
+        "width": 1776,
+        "color": 3
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -496,
+        -224
+      ],
+      "typeVersion": 1,
+      "id": "3713609c-d88f-48b7-94e8-c5c2b412583b",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "pre Webinar Reminder",
+        "height": 704,
+        "width": 1760,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -496,
+        608
+      ],
+      "typeVersion": 1,
+      "id": "8662a274-c30c-4404-a0d8-4c3d6e359c5a",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "path": "35a662ba-d514-4ef3-bf00-48a0adb7fed6",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -352,
+        800
+      ],
+      "id": "c5a3859f-dd32-441d-a89c-86209cd5f3dc",
+      "name": "Webhook",
+      "webhookId": "35a662ba-d514-4ef3-bf00-48a0adb7fed6"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        368,
+        816
+      ],
+      "id": "7d6516fc-aee7-471f-9099-6a9823374dbb",
+      "name": "ReminderEmails",
+      "webhookId": "46187934-49b2-410b-8962-3a5baa9e5fcc"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        128,
+        800
+      ],
+      "id": "696a22fc-17f0-441a-b650-2781e64b042e",
+      "name": "Loop Over Items"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "5c1e267b-1a21-474c-9163-034776dfa315",
+              "leftValue": "={{ $json.messageId }}",
+              "rightValue": "has_phone",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        560,
+        816
+      ],
+      "id": "238c9d7d-e13f-433f-a441-2790a18cdf3e",
+      "name": "IfPhone"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.twilio",
+      "typeVersion": 1,
+      "position": [
+        864,
+        752
+      ],
+      "id": "95ad87c8-8186-40c0-b2c4-0940c9de3535",
+      "name": "Send an SMS/MMS/WhatsApp message",
+      "alwaysOutputData": true,
+      "executeOnce": true,
+      "retryOnFail": true,
+      "maxTries": 2
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "filters": {
+          "conditions": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        -128,
+        800
+      ],
+      "id": "cd490cd4-a3dc-4bc7-b4d8-29f5df5ef5be",
+      "name": "getWebinarAttendees"
+    },
+    {
+      "parameters": {
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        -208,
+        -16
+      ],
+      "id": "34c16b08-1c56-4106-a456-eb0d25c84d7e",
+      "name": "insertWebinarAttendees"
+    },
+    {
+      "parameters": {
+        "content": "post Webinar Actions - not attended",
+        "height": 704,
+        "width": 1760,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -496,
+        1440
+      ],
+      "typeVersion": 1,
+      "id": "647007b1-583d-43be-abe1-7a27bdd7b7f6",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {},
+          "matchingColumns": [],
+          "schema": [],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        464,
+        -16
+      ],
+      "id": "798ce9ee-e393-47d4-8e38-db8e0efbbad9",
+      "name": "WebinarAttendeesRef"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mixpanel.com/track",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        256,
+        -16
+      ],
+      "id": "2a997a31-7b4a-4d7a-b162-3020409b437b",
+      "name": "MixpanelInput",
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mixpanel.com/track",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "=[{\"event\":\"2121\"}]"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1072,
+        -16
+      ],
+      "id": "f51e1a95-30dd-42ee-b72b-d3c693224a62",
+      "name": "ConfirmMixpanel"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -32,
+        1664
+      ],
+      "id": "9bd0ca49-2b0e-42a6-82b8-18411456e4b6",
+      "name": "Loop Over Items1"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=<role>\nYou are a helpful AI assistant processing the webinar Input\n</role>\n\n<action>\n- Provide an Message while Capitalise Name from: \"{{ $json.Name }}\" and use following Template:\n\n\n```\nHallo {Capitalised Name},\nvielen Dank für das Anmelden an unseren Webinar.\n\nFür weitere Infos clicke bitte auf: https://webinar-link.com\n\nMit freundlichen Grüßen,\nDein Webinar Team\n```\n\n- Execute Mixpanel Request and set results to \"Webinar_Status\" Table\n</action> ",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        320,
+        1680
+      ],
+      "id": "a6b5b435-a9b1-4972-9e02-470ea3e4c486",
+      "name": "AI Agent1",
+      "alwaysOutputData": true,
+      "executeOnce": true
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        272,
+        1920
+      ],
+      "id": "6016e741-c0e2-4716-9cdd-7ae675279b8f",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "mDxu0f5C88zMh7KO",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "message": "={{ /*n8n-auto-generated-fromAI-override*/ $fromAI('Message', ``, 'string') }}",
+        "fromEmail": "webinnar@company.de",
+        "toEmail": "={{ $json['E-Mail-Adresse'] }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSendHitlTool",
+      "typeVersion": 2.1,
+      "position": [
+        448,
+        1920
+      ],
+      "id": "6752ebfd-5b7b-4136-9740-7e9e9aef4687",
+      "name": "Send Email1",
+      "webhookId": "d0627cca-9fdd-46fe-ad9a-52bc7355b93c"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mixpanel.com/track",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1056,
+        960
+      ],
+      "id": "a80a554b-4774-445d-96a0-1179342f5149",
+      "name": "ConfirmMixpanel1"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "filters": {
+          "conditions": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        848,
+        1680
+      ],
+      "id": "c67b82b7-ad8c-4527-b132-cf8dcfef3ef9",
+      "name": "interestedNL !!!"
+    },
+    {
+      "parameters": {
+        "operation": "deleteRows",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        16,
+        -16
+      ],
+      "id": "dbce3cfc-65c8-4aba-a652-9ef7155f492f",
+      "name": "remFromInterestedNL"
+    },
+    {
+      "parameters": {
+        "content": "post Webinar Actions - attended",
+        "height": 704,
+        "width": 1760,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -496,
+        2288
+      ],
+      "typeVersion": 1,
+      "id": "2c1e7973-ccb0-4b0b-9aa5-7b519a35355c",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "filters": {
+          "conditions": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        32,
+        2512
+      ],
+      "id": "2033df50-14fc-4786-ac35-ac1fb905a1f2",
+      "name": "attendedWebinarAttendees"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        256,
+        2512
+      ],
+      "id": "2e5dc765-e1bd-4fb0-8320-c44baaf7fdab",
+      "name": "Loop Over Items2"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "filters": {
+          "conditions": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        -336,
+        1664
+      ],
+      "id": "0488e586-dd61-4e1c-9195-24704e8d52de",
+      "name": "noAattendedWebinarAttendees",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mixpanel.com/track",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        576,
+        2528
+      ],
+      "id": "41737f20-ea32-456c-9777-724a3b29f002",
+      "name": "ConfirmMixpanel2"
+    },
+    {
+      "parameters": {
+        "path": "3d3e4872-6ce3-4cce-a94e-4ed03ee13414",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -224,
+        2512
+      ],
+      "id": "9469b284-b100-4a7d-b425-5997a90fe8cb",
+      "name": "Webhook1",
+      "webhookId": "3d3e4872-6ce3-4cce-a94e-4ed03ee13414"
+    },
+    {
+      "parameters": {
+        "content": "post Webinar Actions - call",
+        "height": 704,
+        "width": 1760,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -496,
+        3136
+      ],
+      "typeVersion": 1,
+      "id": "00410de8-d5ba-4b92-b4c9-80c6fa7f2c53",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        112,
+        3376
+      ],
+      "id": "b13c3892-71f1-481d-aa37-1ceef1d6eea9",
+      "name": "Loop Over Items3"
+    },
+    {
+      "parameters": {
+        "path": "3d3e4872-6ce3-4cce-a94e-4ed03ee13414",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -368,
+        3376
+      ],
+      "id": "de8b0331-a6e1-471c-ba6f-8faf28a5d42d",
+      "name": "Webhook2",
+      "webhookId": "3d3e4872-6ce3-4cce-a94e-4ed03ee13414"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "dataTableId": {
+          "__rl": true,
+          "mode": "list",
+          "value": ""
+        },
+        "filters": {
+          "conditions": [
+            {}
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        -112,
+        3376
+      ],
+      "id": "76e1f8c1-0fa2-4132-a921-5bada5bcad02",
+      "name": "attendedWebinarCall"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "b7ae6e3a-4a6c-4ce2-a320-446edc044296",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        384,
+        3408
+      ],
+      "id": "feb410d0-e59f-469d-96c9-032b1cc0525b",
+      "name": "IfHasPhone"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "a8e8d5dd-937d-4426-949e-38c757442e6c",
+              "leftValue": "",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        624,
+        3392
+      ],
+      "id": "9ea0ade3-f71f-4c23-bfdc-478d990f9cd6",
+      "name": "IfMember"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.mixpanel.com/track",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1056,
+        3408
+      ],
+      "id": "cd6e2c78-278c-4769-a891-ea0c0ba693ea",
+      "name": "Mixpanel"
+    },
+    {
+      "parameters": {
+        "url": "n8n-nodes-close",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        832,
+        3408
+      ],
+      "id": "ad4d7e17-b80d-44d8-8c71-60a4f9bc91fe",
+      "name": "CloseSetterCall"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "insertWebinarAttendees",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "ConfirmMixpanel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "getWebinarAttendees",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "ReminderEmails",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ReminderEmails": {
+      "main": [
+        [
+          {
+            "node": "IfPhone",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IfPhone": {
+      "main": [
+        [
+          {
+            "node": "Send an SMS/MMS/WhatsApp message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "ConfirmMixpanel1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send an SMS/MMS/WhatsApp message": {
+      "main": [
+        [
+          {
+            "node": "ConfirmMixpanel1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "getWebinarAttendees": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "insertWebinarAttendees": {
+      "main": [
+        [
+          {
+            "node": "remFromInterestedNL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WebinarAttendeesRef": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MixpanelInput": {
+      "main": [
+        [
+          {
+            "node": "WebinarAttendeesRef",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items1": {
+      "main": [
+        [],
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email1": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "interestedNL !!!",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ConfirmMixpanel1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "interestedNL !!!": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "remFromInterestedNL": {
+      "main": [
+        [
+          {
+            "node": "MixpanelInput",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "attendedWebinarAttendees": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items2": {
+      "main": [
+        [],
+        [
+          {
+            "node": "ConfirmMixpanel2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "noAattendedWebinarAttendees": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ConfirmMixpanel2": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook1": {
+      "main": [
+        [
+          {
+            "node": "attendedWebinarAttendees",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items3": {
+      "main": [
+        [],
+        [
+          {
+            "node": "IfHasPhone",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook2": {
+      "main": [
+        [
+          {
+            "node": "attendedWebinarCall",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "attendedWebinarCall": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IfHasPhone": {
+      "main": [
+        [
+          {
+            "node": "IfMember",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IfMember": {
+      "main": [
+        [],
+        [
+          {
+            "node": "CloseSetterCall",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Mixpanel": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "CloseSetterCall": {
+      "main": [
+        [
+          {
+            "node": "Mixpanel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "e2aa7442-e67d-4684-81bc-27815bd0719b",
+  "meta": {
+    "instanceId": "558d88703fb65b2d0e44613bc35916258b0f0bf983c5d4730c00c424b77ca36a"
+  },
+  "id": "6Ll1WGauOSpi64Jn",
+  "tags": []
+}
