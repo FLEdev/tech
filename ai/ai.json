@@ -378,6 +378,14 @@
       "moved": 0
     },
     {
+      "quadrant": 2,
+      "ring": 3,
+      "label": "Low-level orchestration framework for building stateful agents",
+      "link": "https://github.com/langchain-ai/langgraph",
+      "active": true,
+      "moved": 0
+    },
+    {
       "quadrant": 0,
       "ring": 0,
       "label": "Compfy UI",
@@ -426,6 +434,22 @@
       "moved": 0
     },
     {
+      "quadrant": 2,
+      "ring": 2,
+      "label": "Daniel Miessler AI Blog",
+      "link": "https://danielmiessler.com/blog/",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 2,
+      "ring": 2,
+      "label": "Matt Shumer - Something Big Is Happening",
+      "link": "https://shumer.dev/something-big-is-happening",
+      "active": true,
+      "moved": 0
+    },
+    {
       "quadrant": 0,
       "ring": 1,
       "label": "Claude Receipts",
@@ -460,8 +484,24 @@
     {
       "quadrant": 0,
       "ring": 2,
+      "label": "GStack Templates",
+      "link": "https://github.com/garrytan/gstack",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 0,
+      "ring": 2,
       "label": "Agency Agents #2",
       "link": "https://github.com/Amitkumersarkar/The-Agency.Ai",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 3,
+      "ring": 2,
+      "label": "Local LLM, Quantization explained",
+      "link": "https://www.youtube.com/watch?v=P8m5eHAyrFM",
       "active": true,
       "moved": 0
     }
