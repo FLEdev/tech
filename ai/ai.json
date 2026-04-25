@@ -484,6 +484,14 @@
     {
       "quadrant": 0,
       "ring": 2,
+      "label": "Superpowers Skills, SubAgents",
+      "link": "https://github.com/obra/superpowers",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 0,
+      "ring": 2,
       "label": "GStack Templates",
       "link": "https://github.com/garrytan/gstack",
       "active": true,
@@ -502,6 +510,14 @@
       "ring": 2,
       "label": "Local LLM, Quantization explained",
       "link": "https://www.youtube.com/watch?v=P8m5eHAyrFM",
+      "active": true,
+      "moved": 0
+    },
+    {
+      "quadrant": 0,
+      "ring": 1,
+      "label": "RAG Solution",
+      "link": "https://ragflow.io/docs",
       "active": true,
       "moved": 0
     }
