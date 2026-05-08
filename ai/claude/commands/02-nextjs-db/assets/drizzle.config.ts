@@ -11,4 +11,10 @@ export default defineConfig({
   schema: './db/schemaSqlite.ts',
   dialect: 'turso',
   dbCredentials: dbCredentials,
+  casing: 'snake_case',
+  schemaFilter: ['public'],
+  extensionsFilters: ['citext'],
+  migrations: {
+    migrationsFolder: './db/migration',
+  }
 });

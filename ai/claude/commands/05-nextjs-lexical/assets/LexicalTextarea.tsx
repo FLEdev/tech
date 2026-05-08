@@ -18,7 +18,7 @@ import "./lexical/style.css";
 import { HeadingNode, QuoteNode } from "@lexical/rich-text";
 import { CodeHighlightNode, CodeNode } from "@lexical/code";
 
-import LoadState from "@/components/input/lexical/plugins/LoadState";
+import LoadState from "@/components/lexical/plugins/LoadState";
 import { LoadInitialContent } from "@/components/lexical/plugins/LoadInitContent";
 import DraggableBlockPlugin from "./lexical/plugins/DraggableBlockPlugin";
 

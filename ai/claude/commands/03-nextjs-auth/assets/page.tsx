@@ -1,5 +1,6 @@
 import { auth } from '@/lib/auth';
 import Link from 'next/link';
+import NoteForm from '@/components/NoteForm';
 
 export default async function Home() {
   const session = await auth();
@@ -8,7 +9,8 @@ export default async function Home() {
   if (isLoggedIn) {
     return (
       <div>
-       init
+        init
+        <NoteForm />
       </div>
     );
   }

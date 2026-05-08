@@ -1,8 +1,7 @@
 import * as c from 'drizzle-orm/sqlite-core';
 import { sql } from "drizzle-orm/sql";
-import { User, userRoles, EntityType } from '@/lib/types';
-import { createUniqueId } from "@/lib/utils";
-
+import { User, userRoles, EntityType } from '../src/lib/types';
+import { createUniqueId } from "../src/lib/utils";
 
 export const usersTable = c.sqliteTable("users", {
   id: c.int().primaryKey({ autoIncrement: true }),
