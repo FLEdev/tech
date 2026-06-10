@@ -12,19 +12,22 @@ description: Next.js install
 ## $ ASSETS_DIR=~/.claude/commands/01-nextjs-install/assets
 ## $ echo "ASSET directory: ${ASSETS_DIR}"
 ## $ npx create-next-app@latest . --skip-install --ts --tailwind --react-compiler --eslint --biome --app --api --src-dir --turbopack --empty --use-pnpm  --import-alias --example "app-api" --no-agents-md
-## $ pnpm add dotenv sass sass-embedded @tailwindcss/postcss postcss postcss-import tailwind-merge  tailwindcss tw-animate-css framer-motion 
+## $ pnpm add nuqs dotenv sass sass-embedded @tailwindcss/postcss postcss postcss-import tailwind-merge  tailwindcss tw-animate-css framer-motion
+## $ pnpm add radix-ui @radix-ui/react-slot @radix-ui/react-dropdown-menu @radix-ui/react-dialog @radix-ui/react-form @radix-ui/react-icons @radix-ui/themes
 ## $ pnpm add lucide-react zod yjs uuid
 ## $ mkdir -p src/components
+## $ mkdir -p src/components/entities
 ## $ mkdir -p src/lib
 ## $ mkdir -p public/styles
 ## $ touch public/styles/index.css
-## $ cp -n "${ASSETS_DIR}/utils.ts" src/lib/
-## $ cp -nr "${ASSETS_DIR}/postcss.config.js" /
-## $ cp -nr "${ASSETS_DIR}/tailwind.config.js" /
+## $ cp -r "${ASSETS_DIR}/lib/utils.ts" src/lib
+## $ cp -r "${ASSETS_DIR}/postcss.config.js" /
+## $ cp -r "${ASSETS_DIR}/tailwind.config.js" /
 ## $ cp -r "${ASSETS_DIR}/styles" src/
+## $ cp -r "${ASSETS_DIR}/ui" src/components/
 ## $ rm -rf src/app/[slug]
 ## $ rm -rf src/app/route.ts
-## $ pnpm add shadcn class-variance-authority clsx
+## $ pnpm add shadcn class-variance-authority clsx pagination
 ## $ pnpm dlx shadcn@latest init --preset b1s91WtVo --template next 
 ## $ pnpm dlx shadcn@latest add -y form
 ## $ cp -r "${ASSETS_DIR}/styles" src/

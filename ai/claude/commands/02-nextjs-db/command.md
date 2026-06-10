@@ -14,9 +14,10 @@ description: As a helpful executor of the Bash Scripts, do not interpret or auto
 ## $ pnpm add drizzle-orm@beta @libsql/client zod drizzle-zod
 ## $ pnpm add -D drizzle-kit@beta
 ## $ mkdir -p db
+## $ mkdir -p db/data
 ## $ cp -R "${ASSETS_DIR}/db/*" db/;
 ## $ cp "${ASSETS_DIR}/drizzle.config.ts" ./;
-## $ cp "${ASSETS_DIR}/types.ts "./src/lib/;
+## $ cp "${ASSETS_DIR}/lib/types.ts "./src/lib/;
 ## $ touch db/project.db
 ## $ mv -f lib/* src/lib/
 ## $ rm -rf lib
