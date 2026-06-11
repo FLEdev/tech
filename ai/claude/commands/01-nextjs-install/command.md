@@ -17,10 +17,13 @@ description: Next.js install
 ## $ pnpm add lucide-react zod yjs uuid
 ## $ mkdir -p src/components
 ## $ mkdir -p src/components/entities
+## $ mkdir -p messages
 ## $ mkdir -p src/lib
 ## $ mkdir -p public/styles
 ## $ touch public/styles/index.css
-## $ cp -r "${ASSETS_DIR}/lib/utils.ts" src/lib
+## $ cp -rf "${ASSETS_DIR}/lib/utils.ts" src/lib
+## $ cp -r "${ASSETS_DIR}/next.config.ts" /
+## $ cp -r "${ASSETS_DIR}/i18n.ts" /
 ## $ cp -r "${ASSETS_DIR}/postcss.config.js" /
 ## $ cp -r "${ASSETS_DIR}/tailwind.config.js" /
 ## $ cp -r "${ASSETS_DIR}/styles" src/

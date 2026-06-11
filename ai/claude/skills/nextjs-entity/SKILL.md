@@ -13,7 +13,6 @@ description: As an Orchestrator Agent, go through each step and make sure each o
 ## $ARGUMENTS[2]+ = Any further instructions to consider
 
 # ACTIONS:
-
 ## Read db/schemaSqlite.ts and db/relations.ts and look for '$ARGUMENTS[0]\_table' for table definition
 ## $ARGUMENTS[1] could be same as Table Name. If not, "$ARGUMENTS[0]\_table" should contain something like "type" or similar distinguishing pattern, matching $ARGUMENTS[1].
 

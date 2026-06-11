@@ -3,7 +3,7 @@
 import db from "../index";
 import { requireUser } from "../require-user";
 import { contentTable } from "../schemaSqlite";
-import { createCodeSchema, updateCodeSchema } from "@/lib/types";
+import { create[EntityName]Schema, update[EntityName]Schema } from "@/lib/types";
 import { eq, desc } from "drizzle-orm";
 
 const pageLimit: number = parseInt(process.env.PAGE_LIMIT ?? "30", 10);
@@ -23,7 +23,7 @@ export async function create[EntityName](data: unknown) {
   return result[0];
 }
 
-export async function readCode(id: number) {
+export async function read[EntityName](id: number) {
   await requireUser();
 
   const result = await db
@@ -34,7 +34,7 @@ export async function readCode(id: number) {
   return result[0] || null;
 }
 
-export async function readCodes(offset: number = 0, limit = pageLimit) {
+export async function read[EntityName](offset: number = 0, limit = pageLimit) {
   await requireUser();
 
   const items = await db
@@ -55,9 +55,9 @@ export async function readCodes(offset: number = 0, limit = pageLimit) {
   };
 }
 
-export async function updateCode(id: number, data: unknown) {
+export async function update[EntityName](id: number, data: unknown) {
   await requireUser();
-  const validated = updateCodeSchema.parse(data);
+  const validated = update[EntityName]Schema.parse(data);
 
   const result = await db
     .update(contentTable)
@@ -68,7 +68,7 @@ export async function updateCode(id: number, data: unknown) {
   return result[0] || null;
 }
 
-export async function deleteCode(id: number) {
+export async function delete[EntityName](id: number) {
   await requireUser();
 
   const result = await db

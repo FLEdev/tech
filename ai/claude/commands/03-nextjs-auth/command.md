@@ -13,7 +13,9 @@ description: Next.js initialisation phase - auth
 ## $ npx shadcn@latest add button table dialog form input
 ## $ npx auth secret
 ## $ mkdir -p src/app/api/auth
-## $ cp -R "${ASSETS_DIR}/[...nextauth]" src/app/api/auth/
+## $ cp -Rf "${ASSETS_DIR}/app/[...nextauth]" src/app/api/auth/
+## $ cp -Rf "${ASSETS_DIR}/app/layout.tsx" src/app/
+## $ cp -Rf "${ASSETS_DIR}/app/page.tsx" src/app/
 ## $ cp "${ASSETS_DIR}/lib/auth.ts" src/lib/
 ## $ cp "${ASSETS_DIR}/not-found.tsx" src/app/
 ## $ cp "${ASSETS_DIR}/page.tsx" src/app/
