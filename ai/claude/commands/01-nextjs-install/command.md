@@ -20,6 +20,9 @@ description: Next.js install
 ## $ mkdir -p src/lib
 ## $ mkdir -p public/styles
 ## $ touch public/styles/index.css
+## $ pnpm add shadcn class-variance-authority clsx pagination
+## $ pnpm dlx shadcn@latest init --preset b1s91WtVo --template next 
+## $ pnpm dlx shadcn@latest add -y form
 ## $ cp -rf "${ASSETS_DIR}/lib/utils.ts" src/lib
 ## $ cp -r "${ASSETS_DIR}/postcss.config.js" /
 ## $ cp -r "${ASSETS_DIR}/tailwind.config.js" /
@@ -27,9 +30,6 @@ description: Next.js install
 ## $ cp -r "${ASSETS_DIR}/ui" src/components/
 ## $ rm -rf src/app/[slug]
 ## $ rm -rf src/app/route.ts
-## $ pnpm add shadcn class-variance-authority clsx pagination
-## $ pnpm dlx shadcn@latest init --preset b1s91WtVo --template next 
-## $ pnpm dlx shadcn@latest add -y form
 ## $ cp -r "${ASSETS_DIR}/styles" src/
 ## $ cp -nr "${ASSETS_DIR}/components.json" /
 
