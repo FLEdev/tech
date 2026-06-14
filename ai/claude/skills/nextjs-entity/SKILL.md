@@ -7,6 +7,8 @@ description: As an Orchestrator Agent, go through each step and make sure each o
 # Apply Server Actions for Entity Read, Create, Update and Delete. Define also API Endpoints for Create, Update and Delete that would call the DB Action. There are intermediate Steps that are important and therefo make a individual Plan for the Skill Run instead of processing one after another.
 # Each step is important, if not applicable than stop the execution and ask for explanation instead of try to fix it somehow.
 
+# Crucial Instructions: before each step, consider /skills/next-best-practices before integration
+
 # Parameters:
 ## $ARGUMENTS[0] = Table
 ## $ARGUMENTS[1] = Entity Name

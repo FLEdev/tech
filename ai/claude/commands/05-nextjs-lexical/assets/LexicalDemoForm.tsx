@@ -6,7 +6,7 @@ import LexicalTextarea, { type LexicalTextareaRef } from '@/components/LexicalTe
 export default function LexicalDemoForm() {
   const lexicalRef = useRef<LexicalTextareaRef>(null);
 
-  const inputNLexicalDemoFormAction = async (e: React.FormEvent<HTMLFormElement>) => {
+  const inputLexicalDemoFormAction = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const content = lexicalRef.current?.getContent();
     console.log('Form submitted with content:', content);
