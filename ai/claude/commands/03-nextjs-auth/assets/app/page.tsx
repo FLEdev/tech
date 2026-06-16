@@ -1,6 +1,6 @@
 import { auth } from '@/lib/auth';
 import Link from 'next/link';
-import LexicalDemoForm from '@/components/LexicalDemoForm';
+import LexicalDemoForm from '@/components/lexical-demo-form';
 
 export default async function Home() {
   const session = await auth();

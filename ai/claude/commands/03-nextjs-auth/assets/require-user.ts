@@ -6,7 +6,7 @@ import { cache } from 'react';
 export const requireUser = cache(async () => {
 const session = await auth();
   if (!session?.user) {
-    redirect("/api/auth/login");
+    redirect("/api/auth/signin");
   }
   return session.user;
 });

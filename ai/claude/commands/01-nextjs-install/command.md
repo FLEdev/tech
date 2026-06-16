@@ -5,7 +5,7 @@ description: Next.js install
 
 # IMPORTANT:
 ## Drop previous State, Context and Memory!!!
-## If anything exits with error or is not run properly, stop any furhter execution and halt!
+# Each step is important, if not applicable or failed, stop the execution and ask for instructions. Use a Transaction log in order to revert changes if any Step would fail.
 
 # Run following shell commands and expand/show each result output:
 ## $ set -e  # Exit on error
@@ -20,14 +20,15 @@ description: Next.js install
 ## $ mkdir -p src/lib
 ## $ mkdir -p public/styles
 ## $ touch public/styles/index.css
+## $ cp -r "${ASSETS_DIR}/postcss.config.js" /
+## $ cp -r "${ASSETS_DIR}/tailwind.config.js" /
 ## $ pnpm add shadcn class-variance-authority clsx pagination
 ## $ pnpm dlx shadcn@latest init --preset b1s91WtVo --template next 
 ## $ pnpm dlx shadcn@latest add -y form
 ## $ cp -rf "${ASSETS_DIR}/lib/utils.ts" src/lib
-## $ cp -r "${ASSETS_DIR}/postcss.config.js" /
-## $ cp -r "${ASSETS_DIR}/tailwind.config.js" /
 ## $ cp -r "${ASSETS_DIR}/styles" src/
 ## $ cp -r "${ASSETS_DIR}/ui" src/components/
+## $ cp -r "${ASSETS_DIR}/app/not-found.tsx ${ASSETS_DIR}/app/error.tsx" src/components/app/
 ## $ rm -rf src/app/[slug]
 ## $ rm -rf src/app/route.ts
 ## $ cp -r "${ASSETS_DIR}/styles" src/

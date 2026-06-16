@@ -5,6 +5,7 @@ description: Execute Script and after that orchestrate based on Instructions.
 
 # IMPORTANT
 # Drop previous State, Context and Memory!!!
+# Each step is important, if not applicable or failed, stop the execution and ask for instructions. Use a Transaction log in order to revert changes if any Step would fail.
 # Run following shell commands and expand/show each result output:
 ## $ set -e  # Exit on error
 ## $ ASSETS_DIR=~/.claude/commands/04-nextjs-upload/assets

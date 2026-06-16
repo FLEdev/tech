@@ -5,6 +5,7 @@ description: As a helpful executor of the Bash Scripts, do not interpret or auto
 
 # IMPORTANT
 # Drop previous State, Context and Memory!!!
+# Each step is important, if not applicable or failed, stop the execution and ask for instructions. Use a Transaction log in order to revert changes if any Step would fail.
 # Phase 1: Run following shell commands and expand/show each result output:
 ## $ set -e  # Exit on error
 ## $ ASSETS_DIR=~/.claude/commands/02-nextjs-db/assets

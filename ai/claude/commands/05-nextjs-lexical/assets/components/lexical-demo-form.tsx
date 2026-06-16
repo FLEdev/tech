@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import LexicalTextarea, { type LexicalTextareaRef } from '@/components/LexicalTextarea';
+import LexicalTextarea, { type LexicalTextareaRef } from '@/components/lexical-textarea';
 
 export default function LexicalDemoForm() {
   const lexicalRef = useRef<LexicalTextareaRef>(null);
