@@ -34,25 +34,28 @@ export async function read[EntityName](id: number) {
   return result[0] || null;
 }
 
-export async function read[EntityName](offset: number = 0, limit = pageLimit) {
+export async function read[EntityName]s(
+    offset: number = 0,
+  limit = pageLimit,
+  sortBy: SortableColumn = 'created',
+  sortDir: SortDir = 'desc'
+  ) {
   await requireUser();
+
+  const col = contentTable[sortBy];
+  const order = sortDir === 'asc' ? asc(col) : desc(col);
 
   const items = await db
     .select()
     .from(contentTable)
-    .orderBy(desc(contentTable.created))
+    .orderBy(order)
     .limit(limit)
     .offset(offset);
 
   const countResult = await db.select().from(contentTable);
   const total = countResult.length;
 
-  return {
-    items,
-    total,
-    offset,
-    limit,
-  };
+  return { items, total, offset, limit, sortBy, sortDir };
 }
 
 export async function update[EntityName](id: number, data: unknown) {

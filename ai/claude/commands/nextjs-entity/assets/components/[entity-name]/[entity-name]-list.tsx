@@ -7,10 +7,10 @@ import { useRouter } from "next/navigation";
 import { Flex, Table } from "@radix-ui/themes"
 import { Pencil2Icon, TrashIcon } from "@radix-ui/react-icons";
 import ListPagination from "#components/list-pagination";
-
 import ModalDialog from "@/components/modal-dialog";
 import [EntityName]UpdateForm from "@/components/[entity-name]/[entity-name]-update";
 import [EntityName]DeleteForm from "@/components/[entity-name]/[entity-name]-delete";
+import SortHeader, { SortableColumn } from "@/components/ui/sort/sort-header";
 
 interface [EntityName]ListProps {
   [entityName]ItemsPromise: Promise<{
@@ -18,6 +18,8 @@ interface [EntityName]ListProps {
     total: number;
     offset: number;
     limit: number;
+    sortBy: SortableColumn;
+    sortDir: 'asc' | 'desc';
   }>;
 }
 
@@ -33,10 +35,10 @@ export default function [EntityName]List({ [entityName]ItemsPromise }: [EntityNa
         <Table.Root>
           <Table.Header>
             <Table.Row className="border-b">
-              <Table.ColumnHeaderCell className="p-4">ID</Table.ColumnHeaderCell>
-              <Table.ColumnHeaderCell className="p-4">Title</Table.ColumnHeaderCell>
-              <Table.ColumnHeaderCell className="p-4">Description</Table.ColumnHeaderCell>
-              <Table.ColumnHeaderCell className="p-4">Created Date</Table.ColumnHeaderCell>
+              <Table.ColumnHeaderCell className="p-4"><SortHeader col="id" label="ID" /></Table.ColumnHeaderCell>
+              <Table.ColumnHeaderCell className="p-4"><SortHeader col="title" label="Title" /></Table.ColumnHeaderCell>
+              <Table.ColumnHeaderCell className="p-4">Content</Table.ColumnHeaderCell>
+              <Table.ColumnHeaderCell className="p-4"><SortHeader col="created" label="Created Date" /></Table.ColumnHeaderCell>
               <Table.ColumnHeaderCell className="p-4">Edit</Table.ColumnHeaderCell>
               <Table.ColumnHeaderCell className="p-4">Delete</Table.ColumnHeaderCell>
             </Table.Row>
