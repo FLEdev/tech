@@ -14,7 +14,7 @@ description: Next.js install
 ## $ npx create-next-app@latest . --skip-install --ts --tailwind --react-compiler --eslint --biome --app --api --src-dir --turbopack --empty --use-pnpm  --import-alias --example "app-api" --no-agents-md
 ## $ pnpm add nuqs dotenv sass sass-embedded @tailwindcss/postcss postcss postcss-import tailwind-merge  tailwindcss tw-animate-css framer-motion
 ## $ pnpm add radix-ui @radix-ui/react-slot @radix-ui/react-dropdown-menu @radix-ui/react-dialog @radix-ui/react-form @radix-ui/react-icons @radix-ui/themes
-## $ pnpm add lucide-react zod yjs uuid
+## $ pnpm add react-select lucide-react zod yjs uuid
 ## $ mkdir -p src/components
 ## $ mkdir -p src/components/entities
 ## $ mkdir -p src/lib

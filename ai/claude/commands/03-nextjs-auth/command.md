@@ -20,5 +20,5 @@ description: Next.js initialisation phase - auth
 ## $ cp "${ASSETS_DIR}/lib/auth.ts" src/lib/
 ## $ cp "${ASSETS_DIR}/not-found.tsx" src/app/
 ## $ cp "${ASSETS_DIR}/proxy.ts" src/
-## $ cp "${ASSETS_DIR}/require-user.ts" db/data/
+## $ cp "${ASSETS_DIR}/require-user.ts" src/lib/
 ## $ rm -rf /src/middleware.ts

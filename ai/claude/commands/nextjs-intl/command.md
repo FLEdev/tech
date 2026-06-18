@@ -1,5 +1,4 @@
 ---
-name: nextjs-intl
 description: As a helpfull agent, based on SKILL description, implement nextjs-intl with Help of Step by Step Tasks.
 allowed-tools: Bash(*)
 user-invocable: true

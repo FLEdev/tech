@@ -8,8 +8,8 @@ import { Flex, Table } from "@radix-ui/themes"
 import { Pencil2Icon, TrashIcon } from "@radix-ui/react-icons";
 import ListPagination from "#components/list-pagination";
 import ModalDialog from "@/components/modal-dialog";
-import [EntityName]UpdateForm from "@/components/[entity-name]/[entity-name]-update";
-import [EntityName]DeleteForm from "@/components/[entity-name]/[entity-name]-delete";
+import [EntityName]UpdateForm from "@/components/entities/[entity-name]/[entity-name]-update";
+import [EntityName]DeleteForm from "@/components/entities/[entity-name]/[entity-name]-delete";
 import SortHeader, { SortableColumn } from "@/components/ui/sort/sort-header";
 
 interface [EntityName]ListProps {
@@ -55,7 +55,7 @@ export default function [EntityName]List({ [entityName]ItemsPromise }: [EntityNa
                 <Table.Cell className="p-4 text-gray-600 line-clamp-2">
                   {item.content.substring(0, 100)}...
                 </Table.Cell>
-                <Table.Cell className="p-4">{formatDate(item.created)}</Table.Cell>
+                <Table.Cell className="p-4">{item.created != null ? formatDate(item.created) : '—'}</Table.Cell>
                 <Table.Cell className="p-4">
                   <button
                     onClick={() => setSelectedItem(item)}

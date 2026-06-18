@@ -1,5 +1,4 @@
 ---
-name: nextjs-entity
 description: As an Orchestrator Agent, go through each step and make sure each one is applied.
 allowed-tools: Bash(*)
 user-invocable: true
@@ -9,7 +8,6 @@ argument-hint: [$ARGUMENTS[0]:Table, $ARGUMENTS[1]:Entity Name, $ARGUMENTS[2]+:i
 # IMPORTANT: Drop previous State, Context and Memory. Do not interpret or implement outside the defined scope.
 # Apply Server Actions for Entity Read, Create, Update and Delete. Define also API Endpoints for Create, Update and Delete that would call the DB Action. There are intermediate Steps that are important and therefo make a individual Plan for the Skill Run instead of processing one after another.
 # Each step is important, if not applicable than stop the execution and ask for explanation. Use a Transaction log in order to revert changes if any Step would fail.
-
 # Crucial Instructions: before each step, consider /skills/next-best-practices before integration
 
 # Parameters:
@@ -23,7 +21,8 @@ argument-hint: [$ARGUMENTS[0]:Table, $ARGUMENTS[1]:Entity Name, $ARGUMENTS[2]+:i
 
 ## Within assets there are template files that has to be renamed accordingly the Entity Name. Following File and File Content Patterns should be replaced: [EntityName], [entityName], [entity-name] (mention casing and split)
 ### Copy while replacing content of /app into /app Folder
-### Copy while replacing content /assets/components into /src/components Folder
+## $ mkdir -p src/components/entities
+### Copy while replacing content /assets/components/entities into src/components/entities Folder
 ### Copy while replacing content of /assets/data into /db/data Folder
 ### Append into /src/lib/types.ts following Code while replacing regarding mentioned pattern:
 

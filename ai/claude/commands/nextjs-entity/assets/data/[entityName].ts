@@ -1,7 +1,7 @@
 "use server";
 
 import db from "../index";
-import { requireUser } from "../require-user";
+import { requireUser } from "@/lib/require-user";
 import { contentTable } from "../schemaSqlite";
 import { create[EntityName]Schema, update[EntityName]Schema } from "@/lib/types";
 import { eq, desc } from "drizzle-orm";

@@ -11,6 +11,6 @@ export const createUniqueId = () => {
   return uuidv4();
 }
 
-export const formatDate = (timestamp: number | string) => {
-  return new Date(typeof timestamp === 'number' ? timestamp * 1000 : timestamp).toLocaleDateString();
+export const formatDate = (timestamp: number | string, locale = 'de-DE') => {
+  return new Date(typeof timestamp === 'number' ? timestamp * 1000 : timestamp).toLocaleDateString(locale);
 }
